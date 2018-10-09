@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Dane osobowe</title>
+    <meta name="description" content="Podaj swoje dane">
+    <meta name="keywords" content="podawanie, danych, do, statystyki">
+    <meta name="author" content="Krzysztof Przybylski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<h1>Dej mie te dane człowieku</h1>
+
+<datalist id="miesiac">
+    <option value="Styczeń">
+    <option value="Luty">
+    <option value="Marzec">
+    <option value="Kwiecień">
+    <option value="Maj">
+    <option value="Czerwiec">
+    <option value="Lipiec">
+    <option value="Sierpień">
+    <option value="Wrzesień">
+    <option value="Październik">
+    <option value="Listopad">
+    <option value="Grudzień">
+</datalist>
+
+<form autocomplete="on">
+    <label for="imie">Imie: </label><input type="text" name="imie" id="imie" autofocus> Jan
+    <br>
+    <br>
+    <label for="nazwisko">Nazwisko: </label><input type="text" name="nazwisko" id="nazwisko" required> Kowalski
+    <br>
+    <br>
+    <label for="miesiac_ur">Miesiąc urodzin: </label><input list="miesiac" name="miesiac_ur" id="miesiac_ur"> Styczeń
+    <br>
+    <br>
+    <label for="email">Email: </label> <input type="email" name="email" id="email" required> email@przyklad.pl
+    <br>
+    <br>
+    <label for="tel">Telefon: </label> <input type="tel" name="tel" id="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{3}"> 123 123 123
+    <br>
+    <br>
+    <button type="submit">Wyślij</button>
+</form>
+
+</body>
+
+</html>
