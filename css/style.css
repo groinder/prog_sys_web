@@ -1,0 +1,40 @@
+body {
+    font-size: 20px;
+    background-color: #0bffe9;
+}
+
+h2 {
+    color: #c500b8;
+}
+
+.text-em {
+    font-size: 0.75em;
+}
+
+.text-px {
+    font-size: 30px;
+}
+
+.text-pt {
+    font-size: 30pt;
+}
+
+
+.text-percent {
+    font-size: 50%;
+}
+
+a:visited {
+    color: grey;
+}
+
+a:link {
+    text-decoration: overline;
+}
+
+a:active {
+    border: 1px solid black;
+}
+
+
+

@@ -1,0 +1,21 @@
+.text-1 {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.text-2 {
+    font-variant: all-petite-caps;
+}
+
+.text-3 {
+    font-size: 18px;
+    line-height: 0.8;
+}
+
+.text-4 {
+    font-family: Arial, sans-serif;
+}
+
+.text-5 {
+    letter-spacing: 5px;
+}

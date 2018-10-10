@@ -1,0 +1,20 @@
+body {
+    background: url("../images/bg.jpeg") center;
+    background-size: contain;
+}
+
+#list-1 {
+    color: blue;
+}
+
+ul.list {
+    color: white;
+}
+
+ul.list ul {
+    color: cornflowerblue;
+}
+
+ol.list > li {
+    border: 4px solid aquamarine;
+}

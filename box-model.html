@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Box model</title>
+    <meta name="description" content="Box model presentation">
+    <meta name="keywords" content="box model, box, model, demo, presentation, features">
+    <meta name="author" content="Krzysztof Przybylski">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/box-model.css">
+</head>
+
+<body>
+
+<h1>Box Model</h1>
+
+<h2>Positions</h2>
+<div class="container">
+    <div>Static</div>
+
+    <div class="relative">Relative <br>top 10px <br>left 10px</div>
+
+    <div class="relative right bottom">Relative <br>bottom 10px <br>right 10px</div>
+
+    <div class="absolute">Absolute <br>top 10px <br>right 10px</div>
+
+    <div class="absolute bottom">Absolute <br>bottom 10px <br>right 10px</div>
+</div>
+
+<h2>Content box sizing</h2>
+<div class="container">
+    <div>Static</div>
+
+    <div class="margin"><div class="inner">Margin</div></div>
+
+    <div class="padding"><div class="inner">Padding</div></div>
+</div>
+
+<h2>Border box sizing</h2>
+<div class="container border-box">
+    <div>Static</div>
+
+    <div class="margin"><div class="inner">Margin</div></div>
+
+    <div class="padding"><div class="inner">Padding</div></div>
+</div>
+
+<h2>Float left</h2>
+<div class="container float-left">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<h2>Float right</h2>
+<div class="container float-right">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<h2>Float clear</h2>
+<div class="container float-left">
+    <div></div>
+    <div></div>
+    <div class="clear">Clear</div>
+    <div class="clear">Clear</div>
+    <div></div>
+</div>
+
+</body>
+
+</html>

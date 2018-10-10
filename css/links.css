@@ -1,0 +1,7 @@
+body {
+    background: url("../images/bg.jpeg") no-repeat bottom;
+}
+
+:target {
+    background-color: green;
+}

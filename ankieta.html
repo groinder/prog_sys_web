@@ -8,6 +8,8 @@
     <meta name="keywords" content="ankieta, Pan Tadeusz, literatura polska">
     <meta name="author" content="Krzysztof Przybylski">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/ankieta.css">
 </head>
 
 <body>
@@ -31,34 +33,38 @@
     </div>
     <br>
 
+    <div></div>
+
     <div>
         <div>
             <label>Ocena postaci</label>
         </div>
-        <input type="radio" name="ocena" value="1" required> 1
-        <input type="radio" name="ocena" value="2" required> 2
-        <input type="radio" name="ocena" value="3" required> 3
-        <input type="radio" name="ocena" value="4" required> 4
-        <input type="radio" name="ocena" value="5" required> 5
+        <input type="radio" name="ocena" value="1" required><label>1</label>
+        <input type="radio" name="ocena" value="2" required><label>2</label>
+        <input type="radio" name="ocena" value="3" required><label>3</label>
+        <input type="radio" name="ocena" value="4" required><label>4</label>
+        <input type="radio" name="ocena" value="5" required><label>5</label>
     </div>
     <br>
 
-    <div>
+    <div></div>
+
+    <div class="checkboxes">
         <div>
             <label>W których księgach postaćbrała udział</label>
         </div>
-        <input type="checkbox" name="ksiega" value="1"> I <br>
-        <input type="checkbox" name="ksiega" value="2"> II <br>
-        <input type="checkbox" name="ksiega" value="3"> III <br>
-        <input type="checkbox" name="ksiega" value="4"> IV <br>
-        <input type="checkbox" name="ksiega" value="5"> V <br>
-        <input type="checkbox" name="ksiega" value="6"> VI <br>
-        <input type="checkbox" name="ksiega" value="7"> VII <br>
-        <input type="checkbox" name="ksiega" value="8"> VIII <br>
-        <input type="checkbox" name="ksiega" value="9"> IX <br>
-        <input type="checkbox" name="ksiega" value="10"> X <br>
-        <input type="checkbox" name="ksiega" value="11"> XI <br>
-        <input type="checkbox" name="ksiega" value="12"> XII <br>
+        <input type="checkbox" name="ksiega" value="1"><label>I</label><br>
+        <input type="checkbox" name="ksiega" value="2"><label>II</label><br>
+        <input type="checkbox" name="ksiega" value="3"><label>III</label><br>
+        <input type="checkbox" name="ksiega" value="4"><label>IV</label><br>
+        <input type="checkbox" name="ksiega" value="5"><label>V</label><br>
+        <input type="checkbox" name="ksiega" value="6"><label>VI</label><br>
+        <input type="checkbox" name="ksiega" value="7"><label>VII</label><br>
+        <input type="checkbox" name="ksiega" value="8"><label>VIII</label><br>
+        <input type="checkbox" name="ksiega" value="9"><label>IX</label><br>
+        <input type="checkbox" name="ksiega" value="10"><label>X</label><br>
+        <input type="checkbox" name="ksiega" value="11"><label>XI</label><br>
+        <input type="checkbox" name="ksiega" value="12"><label>XII</label><br>
     </div>
     <br>
 
@@ -90,6 +96,7 @@
         </div>
 
         <input type="text" name="inne" id="inne">
+        <input type="text" name="inne-disabled" disabled>
     </div>
     <br>
 
@@ -106,7 +113,7 @@
 
 <footer>
     <p>Ankieta skonstruowana przez: <i>Instytut Ankiet Pana Tadeusza</i></p>
-    <p>Jak masz lepszy pomysł napisz: <a href="mailto:itaknikt@tegonieczyta.pl">
+    <p class="default">Jak masz lepszy pomysł napisz: <a href="mailto:itaknikt@tegonieczyta.pl">
         itaknikt@tegonieczyta.pl</a>.</p>
 </footer>
 </body>

@@ -1,0 +1,52 @@
+table {
+    margin-top: 25px;
+}
+
+.table, .table th, .table td {
+    border: 1px solid black;
+}
+
+.table-2 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-2 th {
+    height: 30px;
+}
+
+.table-2 td {
+    height: 80px;
+    vertical-align: center;
+    padding: 30px;
+}
+
+.table-2 table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-3 {
+    border-spacing: 0;
+}
+
+.table-3 td, .table-3 th {
+    padding: 15px 20px;
+}
+
+.table-3 td {
+    border-top: 1px solid #646464;
+}
+
+.table-3 th {
+    background-color: blueviolet;
+    color: white;
+}
+
+.table-3 tr:nth-child(even) {
+    background-color: lavender;
+}
+
+.table-3 tr:hover {
+    background-color: lavender;
+}
