@@ -16,9 +16,14 @@ h2 {
 }
 
 .text-pt {
-    font-size: 30pt;
+    font-size: 15pt;
 }
 
+@media (min-width: 768px) {
+    .text-pt {
+        font-size: 30pt;
+    }
+}
 
 .text-percent {
     font-size: 50%;
