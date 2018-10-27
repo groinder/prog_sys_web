@@ -1,0 +1,39 @@
+.bg {
+    background-image: url("../images/pan_tadeusz2.jpg");
+    background-repeat: repeat-y;
+    background-position: top right;
+    width: 600px;
+    height: 600px;
+    margin-top: 50px;
+    border: 50px solid yellowgreen;
+}
+
+.content-box {
+    background-origin: content-box;
+}
+
+.border-box {
+    background-origin: border-box;
+}
+
+.padding-box {
+    background-origin: padding-box;
+    padding: 50px;
+}
+
+.border-image {
+    width: 600px;
+    height: 600px;
+    margin-top: 50px;
+    border: 50px solid;
+    border-image-source: url("../images/pan_tadeusz2.jpg");
+}
+
+.slice {
+    border-image-slice: 30;
+}
+
+.repeat {
+    border-image-repeat: repeat;
+    border-image-slice: 60;
+}

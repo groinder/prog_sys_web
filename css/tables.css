@@ -19,6 +19,7 @@ table {
     height: 80px;
     vertical-align: center;
     padding: 30px;
+    background: radial-gradient(circle at 50%, #ffa203, red, yellow);
 }
 
 .table-2 table {
@@ -49,4 +50,10 @@ table {
 
 .table-3 tr:hover {
     background-color: lavender;
+}
+
+body {
+    background-image: url("../images/pan_tadeusz1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
 }

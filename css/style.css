@@ -1,6 +1,5 @@
 body {
     font-size: 20px;
-    background-color: #0bffe9;
 }
 
 h2 {
@@ -41,5 +40,25 @@ a:active {
     border: 1px solid black;
 }
 
+.text-shadow {
+    text-shadow: 5px 5px 12px rgb(222, 0, 211);
+}
 
+.rounded-border {
+    border: 4px solid rgba(222, 0, 211, 0.4);
+    border-top-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+}
 
+.circle {
+    border: 4px solid hsla(225, 100%, 50%, 0.5);
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 14px rgba(0, 0, 0, 0.35), 0 -14px rgba(255, 192, 203, 0.41), 14px 0 rgba(255, 0, 0, 0.32), -14px 0 #f0ff00, inset 0 0 14px blue;
+    margin: 0 auto 20px;
+}
+
+.linear-gradient {
+    background: linear-gradient(to bottom, #00fdff, #25b900);
+}

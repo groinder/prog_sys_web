@@ -1,0 +1,83 @@
+.container {
+    border: 3px solid black;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.object {
+    width: 100px;
+    height: 100px;
+    border: 3px solid green;
+    margin: 20px;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes in-square {
+    25% {
+        transform: translate(100%, 0) rotate(90deg) skew(-10deg, -10deg);
+    }
+
+    50% {
+        transform: translate(100%, 100%) rotate(180deg) skew(0, 0);
+    }
+
+    75% {
+        transform: translate(0, 100%) rotate(270deg) skew(10deg, 10deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(360deg) skew(0, 0);
+    }
+}
+
+.fade-in {
+    animation: fade-in 1s ease-in-out;
+}
+
+.fade-out {
+    animation: fade-in 1s ease-in-out reverse forwards;
+}
+
+.in-square {
+    animation: in-square 4s infinite;
+}
+
+.hover-fade {
+    background-color: #f0ff00;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.hover-fade:hover {
+    opacity: 0;
+}
+
+.hover-fade-reverse {
+    background-color: red;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.hover-fade-reverse:hover {
+    opacity: 1;
+}
+
+
