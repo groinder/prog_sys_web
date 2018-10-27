@@ -67,6 +67,6 @@ div {
 .clear {
     clear: both;
     border-width: 5px;
-    border-style: dashed;
+    border-style: double;
     border-color: darkgreen;
 }

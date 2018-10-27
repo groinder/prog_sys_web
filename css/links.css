@@ -1,5 +1,5 @@
 body {
-    background: url("../images/bg.jpeg") no-repeat bottom;
+    background: url("../images/bg.jpeg") no-repeat bottom fixed;
 }
 
 :target {
