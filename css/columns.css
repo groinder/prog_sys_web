@@ -1,0 +1,24 @@
+.container {
+
+    column-count: 2;
+    column-gap: 25px;
+    column-rule: 2px solid blue;
+}
+
+@media (min-width: 768px){
+    .container {
+
+        column-count: 3;
+        column-gap: 50px;
+        column-rule: 4px double #ff00ff;
+    }
+}
+
+
+@media (min-width: 1200px){
+    .container {
+
+        column-count: 5;
+
+    }
+}

@@ -81,3 +81,55 @@
 }
 
 
+@font-face {
+    font-family: SpicyRice;
+    src: url('../fonts/SpicyRice-Regular.ttf');
+}
+
+.new-font{
+    font-family: SpicyRice;
+    font-size: 40px;
+}
+
+.wrapper{
+    display: flex;
+    width: 800px;
+    height: 800px;
+    margin: 50px auto;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.wrapper div{
+    flex: 1 1 200px;
+    background-color: #a7aaab;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.wrapper div:hover{
+    flex: 1 0 300px;
+
+}
+
+.blue:hover{
+    background-color: blue;
+    color: white;
+}
+
+.red:hover{
+    background-color: red;
+    color: white;
+}
+
+.green:hover{
+    background-color: green;
+}
+
+.yellow:hover{
+    background-color: yellow;
+}
+
+.wrapper div:not(:last-child){
+    border-right: 1px solid black;
+}
