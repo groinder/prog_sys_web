@@ -16,22 +16,70 @@
             color: red;
         }
     </style>
+    <script type="text/javascript">
+        var count = 1;
+        var possible = true;
+        var name;
+        var random = Math.floor((Math.random() * 10) + 1);
+        var change = false;
 
-    <script type="javascript">
+        function change() {
+            var button = document.getElementById("refreshButton");
+            button.addEventListener("click", changeText, false);
+        }
 
+        function changeText() {
+            if(!change){
+                document.getElementById("text_head").innerHTML = "Inny losowy tekst!";
+                change = true
+            }
+            else{
+                document.getElementById("text_head").innerHTML = "Losowy tekst &#8623";
+                change = false;
+            }
+        }
 
-
-        function game(){
+        function game() {
             var button = document.getElementById("playButton");
             button.addEventListener("click", play, false);
         }
 
-        function play(){
-
+        function play() {
+            possible = true;
+            var value = Math.floor((Math.random() * 100) + 1);
             var userSuggest = window.prompt("Myślę o liczbie z przedziału 1 do 100, spróbuj ją zgadnąć")
+
+            while (possible) {
+                if (userSuggest > value) {
+                    userSuggest = window.prompt("Podana liczba jest zbyt duża, spróbuj ponownie");
+                    count++;
+                    toomuch();
+                }
+                else if (userSuggest < value) {
+                    userSuggest = window.prompt("Podana liczba jest zbyt mała, spróbuj ponownie");
+                    count++;
+                    toomuch();
+                }
+                else {
+                    userSuggest = window.prompt("Błędna wartość, podaj cyfrę od 1 do 100");
+                }
+            }
+
+            function toomuch() {
+                if (count > 10) {
+                    window.alert(name + ", jesteś beznadziejny, przekroczyłeś 10 prób, spróbuj kiedy indziej");
+                    possible = false;
+
+                }
+            }
+
+            if (possible) {
+                window.alert("Brawo! Udało Ci się przy " + count + " próbie");
+            }
         }
 
         window.addEventListener("load", game, false);
+        window.addEventListener("load", change, false);
     </script>
 </head>
 
@@ -51,10 +99,16 @@
     <div class="rounded-border">
         <h1 class="text-shadow">
             <script type="text/javascript">
-                var name;
-                var time = new Date();
+
+                var time = new Date().getHours();
                 name = window.prompt("Podaj swoje imię")
-                document.writeln("Witaj na stronie głównej " + name + "<br> Dziś jest:" + time)
+                if (time > 19) {
+                    document.writeln("Dobry wieczór, ");
+                }
+                else {
+                    document.writeln("Dzień dobry, ")
+                }
+                document.writeln("witaj na stronie głównej " + name)
             </script>
         </h1>
 
@@ -65,32 +119,34 @@
         <div class="circle"></div>
     </div>
     <div>
-    <table class="table">
-        <tr>
-            <td>Cyfra</td>
-            <td>Kwadrat</td>
-            <td> Sześcian</td>
-        </tr>
-        <script type="text/javascript">
-            var random = Math.floor((Math.random() * 10) + 1);
-            for (var counter = 1; counter <= 5; ++counter) {
+        <table class="table">
+            <tr>
+                <td>Cyfra</td>
+                <td>Kwadrat</td>
+                <td> Sześcian</td>
+            </tr>
+            <script type="text/javascript">
 
-                document.writeln("<tr><td>" + random + "</td><td>" + square(random) + "</td><td>" + cube(random) + "</td>");
-                random++;
-            }
+                for (var counter = 1; counter <= 5; ++counter) {
 
-            function square(x){
-                return x*x;
-            }
+                    document.writeln("<tr><td>" + random + "</td><td>" + square(random) + "</td><td>" + cube(random) + "</td>");
+                    random++;
+                }
 
-            function cube(x){
-                return x*x*x;
-            }
-        </script>
-    </table></div>
+                function square(x) {
+                    return x * x;
+                }
+
+                function cube(x) {
+                    return x * x * x;
+                }
+            </script>
+        </table>
+    </div>
     <div>
         <form action="#">
-            <input id = "playButton" type = "button" value="Zagraj w grę">
+            <input id="refreshButton" type="button" value="Odśwież">
+            <input id="playButton" type="button" value="Zagraj w grę">
         </form>
 
     </div>
@@ -98,7 +154,7 @@
 </section>
 
 <article>
-    <h1 style="color: green;">Losowy tekst &#8623;</h1>
+    <h1 id="text_head" style="color: green;">Losowy tekst &#8623;</h1>
     <p class="text-em">
         Nic a potem najwyższych krajowych zamieszków. Dobra, całe zniszczone sekwestrami rządu bezładnością opieki,
         wyrokami
