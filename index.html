@@ -16,12 +16,15 @@
             color: red;
         }
     </style>
+
+    <script type="text/javascript" src="functions.js">
+    </script>
+
     <script type="text/javascript">
         var count = 1;
         var possible = true;
         var name;
-        var random = Math.floor((Math.random() * 10) + 1);
-        var change = false;
+        var changePoss = false;
 
         function change() {
             var button = document.getElementById("refreshButton");
@@ -29,13 +32,13 @@
         }
 
         function changeText() {
-            if(!change){
+            if(!changePoss){
                 document.getElementById("text_head").innerHTML = "Inny losowy tekst!";
-                change = true
+                changePoss = true
             }
             else{
                 document.getElementById("text_head").innerHTML = "Losowy tekst &#8623";
-                change = false;
+                changePoss = false;
             }
         }
 
@@ -46,7 +49,7 @@
 
         function play() {
             possible = true;
-            var value = Math.floor((Math.random() * 100) + 1);
+            var value = randomNumb(1, 100)
             var userSuggest = window.prompt("Myślę o liczbie z przedziału 1 do 100, spróbuj ją zgadnąć")
 
             while (possible) {
@@ -126,7 +129,7 @@
                 <td> Sześcian</td>
             </tr>
             <script type="text/javascript">
-
+                var random = randomNumb(1,10);
                 for (var counter = 1; counter <= 5; ++counter) {
 
                     document.writeln("<tr><td>" + random + "</td><td>" + square(random) + "</td><td>" + cube(random) + "</td>");

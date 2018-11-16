@@ -12,17 +12,53 @@
     <link rel="stylesheet" href="css/dane.css">
 
     <script type="text/javascript">
-        window.addEventListener( "submit", thanks, false );
+        window.addEventListener("submit", thanks, false);
+        showDay();
 
-        function thanks(){
+        function variables() {
+            var zmienne = window.prompt("Wprowadź losowy ciąg znaków")
+            document.getElementById("int").innerHTML = "Zmienna typu int: ";
+            document.getElementById("float").innerHTML = "Zmienna typu int: " + parseFloat(zmienne);
+        }
+
+        function thanks() {
             window.alert("Dziękujemy za wysłanie swoich danych");
         }
+
+
+        function showDay(){
+            var day;
+            switch (new Date().getDay()) {
+                case 0:
+                    day = "Niedziela";
+                    break;
+                case 1:
+                    day = "Poniedziałek";
+                    break;
+                case 2:
+                    day = "Wtorek";
+                    break;
+                case 3:
+                    day = "Sroda";
+                    break;
+                case 4:
+                    day = "Czwartek";
+                    break;
+                case 5:
+                    day = "Piątek";
+                    break;
+                case 6:
+                    day = "Sobota";
+            }
+            document.getElementById("nagl").innerHTML = "Dej mie te dane człowieku bo jest dzisiaj" + day;
+        }
+
+        window.addEventListener("load", variables, false);
     </script>
 </head>
 
 <body>
-
-<h1>Dej mie te dane człowieku</h1>
+<h1 id="nagl">Dej mie te dane człowieku</h1>
 
 <datalist id="miesiac">
     <option value="Styczeń">
@@ -58,7 +94,8 @@
     <br>
     <button type="submit">Wyślij</button>
 </form>
-
+<h4 id=int">A</h4>
+<h4 id=float">B</h4>
 <div class="bg border-box">
     border-box
 </div>
