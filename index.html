@@ -16,6 +16,23 @@
             color: red;
         }
     </style>
+
+    <script type="javascript">
+
+
+
+        function game(){
+            var button = document.getElementById("playButton");
+            button.addEventListener("click", play, false);
+        }
+
+        function play(){
+
+            var userSuggest = window.prompt("Myślę o liczbie z przedziału 1 do 100, spróbuj ją zgadnąć")
+        }
+
+        window.addEventListener("load", game, false);
+    </script>
 </head>
 
 <body class="linear-gradient">
@@ -32,7 +49,14 @@
 
 <section>
     <div class="rounded-border">
-        <h1 class="text-shadow">Witaj na stronie głownej!</h1>
+        <h1 class="text-shadow">
+            <script type="text/javascript">
+                var name;
+                var time = new Date();
+                name = window.prompt("Podaj swoje imię")
+                document.writeln("Witaj na stronie głównej " + name + "<br> Dziś jest:" + time)
+            </script>
+        </h1>
 
         <p>
             Niezależnie od tego co tu robisz, nie znajdziesz tu nic ciekawego!
@@ -40,6 +64,37 @@
 
         <div class="circle"></div>
     </div>
+    <div>
+    <table class="table">
+        <tr>
+            <td>Cyfra</td>
+            <td>Kwadrat</td>
+            <td> Sześcian</td>
+        </tr>
+        <script type="text/javascript">
+            var random = Math.floor((Math.random() * 10) + 1);
+            for (var counter = 1; counter <= 5; ++counter) {
+
+                document.writeln("<tr><td>" + random + "</td><td>" + square(random) + "</td><td>" + cube(random) + "</td>");
+                random++;
+            }
+
+            function square(x){
+                return x*x;
+            }
+
+            function cube(x){
+                return x*x*x;
+            }
+        </script>
+    </table></div>
+    <div>
+        <form action="#">
+            <input id = "playButton" type = "button" value="Zagraj w grę">
+        </form>
+
+    </div>
+</section>
 </section>
 
 <article>

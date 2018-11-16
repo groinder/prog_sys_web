@@ -44,6 +44,13 @@ a:active {
     text-shadow: 5px 5px 12px rgb(222, 0, 211);
 }
 
+.table{
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+<<<<<<< Updated upstream
 .rounded-border {
     border: 4px solid rgba(222, 0, 211, 0.4);
     border-top-left-radius: 18px;
@@ -62,3 +69,8 @@ a:active {
 .linear-gradient {
     background: linear-gradient(to bottom, #00fdff, #25b900);
 }
+=======
+:hover{
+    color: red;
+}
+>>>>>>> Stashed changes
