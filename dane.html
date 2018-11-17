@@ -13,12 +13,14 @@
 
     <script type="text/javascript">
         window.addEventListener("submit", thanks, false);
+        window.addEventListener("load", variables, false);
+        window.addEventListener("load", showDay, false);
         showDay();
 
         function variables() {
             var zmienne = window.prompt("Wprowadź losowy ciąg znaków")
-            document.getElementById("int").innerHTML = "Zmienna typu int: ";
-            document.getElementById("float").innerHTML = "Zmienna typu int: " + parseFloat(zmienne);
+            document.getElementById("int").innerHTML = "Zmienna typu int: " + parseInt(zmienne);
+            document.getElementById("float").innerHTML = "Zmienna typu float: " + parseFloat(zmienne);
         }
 
         function thanks() {
@@ -30,30 +32,30 @@
             var day;
             switch (new Date().getDay()) {
                 case 0:
-                    day = "Niedziela";
+                    day = "niedziela";
                     break;
                 case 1:
-                    day = "Poniedziałek";
+                    day = "poniedziałek";
                     break;
                 case 2:
-                    day = "Wtorek";
+                    day = "wtorek";
                     break;
                 case 3:
-                    day = "Sroda";
+                    day = "sroda";
                     break;
                 case 4:
-                    day = "Czwartek";
+                    day = "czwartek";
                     break;
                 case 5:
-                    day = "Piątek";
+                    day = "piątek";
                     break;
                 case 6:
-                    day = "Sobota";
+                    day = "sobota";
             }
-            document.getElementById("nagl").innerHTML = "Dej mie te dane człowieku bo jest dzisiaj" + day;
+            document.getElementById("nagl").innerHTML = "Dej mie te dane człowieku, bo jest dzisiaj " + day;
         }
 
-        window.addEventListener("load", variables, false);
+
     </script>
 </head>
 
@@ -94,8 +96,8 @@
     <br>
     <button type="submit">Wyślij</button>
 </form>
-<h4 id=int">A</h4>
-<h4 id=float">B</h4>
+<h4 id="int">A</h4>
+<h4 id="float">B</h4>
 <div class="bg border-box">
     border-box
 </div>
