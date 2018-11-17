@@ -13,9 +13,27 @@
 </head>
 
 <body>
-
+<select id="bckg">
+    <option value="" selected disabled>Kolor tła</option>
+    <option value="black">Czarny</option>
+    <option value="red">Czerwony</option>
+    <option value="blue">Niebieski</option>
+</select>
+<select id="text">
+    <option value="" selected disabled>Kolor czcionki</option>
+    <option value="yellow">Żółty</option>
+    <option value="green">Zielony</option>
+    <option value="white">Biały</option>
+</select>
+<select id="font">
+    <option value="" selected disabled>Rozmiar czcionki</option>
+    <option value="Arial">Arial</option>
+    <option value="Tahoma">Tahoma</option>
+    <option value="Times New Roman">Times New Roman</option>
+</select>
 <h1>Jaka jest Twoja ulubiona postać z Pana Tadeusza?</h1>
-
+<div id="keys"></div>
+<h1 id="mouse"></h1>
 <form method="post">
     <div>
         <div>
@@ -30,6 +48,7 @@
             <label for="opis">Dlaczego ją lubisz?</label>
         </div>
         <textarea name="opis" id="opis" cols="30" rows="10" maxlength="200"></textarea>
+        <div id="information"></div>
     </div>
     <br>
 
@@ -116,6 +135,76 @@
     <p class="default">Jak masz lepszy pomysł napisz: <a href="mailto:itaknikt@tegonieczyta.pl">
         itaknikt@tegonieczyta.pl</a>.</p>
 </footer>
+<script>
+    var bckg = document.getElementById("bckg");
+    bckg.addEventListener("change", function() {
+        document.body.style.backgroundColor=bckg.value;
+    })
+
+    var text = document.getElementById("text");
+    text.addEventListener("change", function() {
+        document.body.style.color=text.value;
+    })
+
+    var font = document.getElementById("font");
+    font.addEventListener("change", function() {
+        document.body.style.fontFamily=font.value;
+    })
+
+    function printMouseCord(event){
+        var cords = event.clientX + "," + event.clientY + " " + event.screenX + "," + event.screenY;
+        document.getElementById("mouse").innerHTML= cords;
+
+    }
+
+    function printKey(event){
+        var keys = [];
+
+        if(event.altKey){
+            keys.push("ALT")
+        }
+        if(event.ctrlKey){
+            keys.push("CTRL")
+        }
+        if(event.shiftKey){
+            keys.push("SHIFT")
+        }
+        if(event.keyCode){
+            keys.push(event.keyCode)
+        }
+        var keysStr = keys.join(" + ");
+        document.getElementById("keys").innerHTML=keysStr;
+    }
+    var container = document.getElementById("information");
+    var area = document.body.getElementsByTagName("textarea")[0];
+    area.addEventListener("mousedown", function(){
+        container.innerHTML="Wciśnięte";
+    })
+    area.addEventListener("mouseover", function(){
+        container.innerHTML="Nad";
+    })
+    area.addEventListener("mouseout", function(){
+        container.innerHTML="Poza";
+    })
+
+    document.body.addEventListener("keydown", printKey);
+    document.body.addEventListener("keyup", printKey);
+    document.body.addEventListener("mousemove", printMouseCord);
+
+
+    function resetConfirm(event){
+        var confirmed = window.confirm("Czy na pewno?");
+
+        if(!confirmed){
+            event.preventDefault();
+        }
+    }
+
+    document.forms[0].addEventListener("reset", resetConfirm);
+    document.forms[0].addEventListener("submit", resetConfirm);
+
+
+</script>
 </body>
 
 </html>

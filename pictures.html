@@ -10,6 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/pictures.css">
+
 </head>
 
 <body>
@@ -33,7 +34,14 @@
 <h2>A teraz zobacz na tę że sztukę</h2>
 
 <img src="images/pan_tadeusz2.jpg" alt="Pan Tadeusz sztuka">
-
+<script>
+    var x = document.images.length;
+    var h1 = document.getElementsByTagName("h1")[0];
+    var h2 = document.createElement("h2");
+    var h2_txt = document.createTextNode("Ilość obrazów na stronie: " +x);
+    h2.appendChild(h2_txt);
+    document.body.insertBefore(h2, h1.nextSibling);
+</script>
 </body>
 
 </html>

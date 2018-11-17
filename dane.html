@@ -11,7 +11,47 @@
 
     <link rel="stylesheet" href="css/dane.css">
 
+
     <script type="text/javascript">
+
+        function delete_input() {
+
+            var form = document.forms.item(0);
+            form.removeChild(form.childNodes[0]);
+
+        }
+
+        function createInp(value){
+            var container = document.createElement("div");
+            var newItem = document.createElement("input");
+            newItem.value=value;
+            container.appendChild(newItem);
+            return container;
+        }
+
+        function replace_input(){
+
+
+            var form = document.forms.item(0);
+            form.replaceChild(createInp("Jestem tu nowy"), form.childNodes[4]);
+
+        }
+
+        function create_input(){
+
+
+            var form = document.item(0);
+            form.insertBefore(createInp("Txt"), form.childNodes[0]);
+
+        }
+        function create_button() {
+            var button = document.createElement("button");
+            var b_txt = document.createTextNode("Click");
+            button.appendChild(b_txt);
+            document.getElementById("buttons").appendChild(button);
+        }
+
+
         window.addEventListener("submit", thanks, false);
         window.addEventListener("load", variables, false);
         window.addEventListener("load", showDay, false);
@@ -78,23 +118,28 @@
 </datalist>
 
 <form autocomplete="on">
-    <label for="imie">Imie: </label><input type="text" name="imie" id="imie" autofocus> Jan
+    <label for="imie">Imie: </label><input type="text" name="imie" id="imie" autofocus> <span>Jan</span>
     <br>
     <br>
-    <label for="nazwisko">Nazwisko: </label><input type="text" name="nazwisko" id="nazwisko" required> Kowalski
+    <label for="nazwisko">Nazwisko: </label><input type="text" name="nazwisko" id="nazwisko" required> <span>Kowalski</span>
     <br>
     <br>
-    <label for="miesiac_ur">Miesiąc urodzin: </label><input list="miesiac" name="miesiac_ur" id="miesiac_ur"> Styczeń
+    <label for="miesiac_ur">Miesiąc urodzin: </label><input list="miesiac" name="miesiac_ur" id="miesiac_ur"> <span>Styczeń</span>
     <br>
     <br>
-    <label for="email">Email: </label> <input type="email" name="email" id="email" required> email@przyklad.pl
+    <label for="email">Email: </label> <input type="email" name="email" id="email" required> <span>email@przyklad.pl</span>
     <br>
     <br>
-    <label for="tel">Telefon: </label> <input type="tel" name="tel" id="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{3}"> 123
-    123 123
+    <label for="tel">Telefon: </label> <input type="tel" name="tel" id="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{3}"> <span>123
+    123 123</span>
     <br>
     <br>
     <button type="submit">Wyślij</button>
+    <button type="button" onclick="create_button()">Wypróbuj</button>
+    <button type="button" onclick="create_input()">Dodaj pole</button>
+    <button type="button" onclick="replace_input()">Zamień pole</button>
+    <button type="button" onclick="delete_input()">Usuń pole</button>
+    <div id="buttons"></div>
 </form>
 <h4 id="int">A</h4>
 <h4 id="float">B</h4>
@@ -112,7 +157,26 @@
 
 <div class="border-image slice"></div>
 <div class="border-image repeat"></div>
+<script>
+    var form = document.forms[0];
+    var inputs = Array.from(form.getElementsByTagName("input"));
 
+    function focus(event){
+        event.target.nextElementSibling.style.display="inline";
+    }
+
+    function blur(event){
+        event.target.nextElementSibling.style.display="none";
+    }
+
+    inputs.forEach(function(input){
+        input.addEventListener("focus", focus);
+        input.addEventListener("blur", blur);
+
+    })
+
+
+</script>
 </body>
 
 </html>

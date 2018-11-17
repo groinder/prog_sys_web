@@ -37,3 +37,8 @@
     border-image-repeat: repeat;
     border-image-slice: 60;
 }
+
+
+span{
+    display: none;
+}

@@ -305,13 +305,25 @@
         <a href="http://speedtest.ftp.otenet.gr/files/test1Mb.db">Pobierz po http</a>
         <br>
         <br>
-        <a href="ftp://speedtest:speedtest@ftp.otenet.gr/test1Mb.db">Pobierz po ftp</a>
+        <a id="lucky_one" href="ftp://speedtest:speedtest@ftp.otenet.gr/test1Mb.db">Pobierz po ftp</a>
         <br>
         <br>
     </section>
 </article>
 
+<script>
 
+    var links = Array.from(document.links);
+    links.forEach(function (item, index) {
+        if(index%2===0){
+           item.style.color="pink";
+        }
+
+    });
+
+    document.links.namedItem("lucky_one").style.fontSize="80px";
+
+</script>
 </body>
 
 </html>
