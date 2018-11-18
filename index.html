@@ -64,6 +64,11 @@
                     count++;
                     toomuch();
                 }
+                else if(userSuggest == value){
+                    window.alert("Brawo! Udało Ci się przy " + count + " próbie");
+                    possible = false;
+
+                }
                 else {
                     userSuggest = window.prompt("Błędna wartość, podaj cyfrę od 1 do 100");
                 }
@@ -77,9 +82,7 @@
                 }
             }
 
-            if (possible) {
-                window.alert("Brawo! Udało Ci się przy " + count + " próbie");
-            }
+
         }
 
         window.addEventListener("load", game, false);
