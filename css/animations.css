@@ -76,6 +76,7 @@
         transform: translate(100%, 100%) rotate(180deg) skew(0, 0);
     }
 
+
     75% {
         -webkit-transform: translate(0, 100%) rotate(270deg) skew(10deg, 10deg);
         -ms-transform: translate(0, 100%) rotate(270deg) skew(10deg, 10deg);
