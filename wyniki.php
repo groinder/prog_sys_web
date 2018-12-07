@@ -75,7 +75,7 @@ if(isset($_POST["country"])) {
     //echo "Twój kraj to: ".next($country);
 
 }
-
+//s
 ?>
 
 
