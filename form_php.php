@@ -20,6 +20,8 @@
     <input type="text" name="imie"/><hr>
     Nazwisko<br/>
     <input type="text" name="nazwisko"/><hr>
+    Wiek:<br/>
+    <input type="text" name="wiek"/><hr>
     Płeć:<br/>
     K <input type="radio" name="plec"/>
     M <input type="radio" name="plec"/>
@@ -29,7 +31,7 @@
     E-mail<br />
     <input type="text" name="email" /><hr>
     Kraj pochodzenia: <br />
-    <select name="country">
+    <select name="country[]">
         <option>Polska</option>
         <option>Niemcy</option>
         <option>Francja</option>
