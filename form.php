@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -14,7 +17,10 @@
 
 <body style="background-color: <?php echo $_COOKIE["bckg"]?>; color: <?php echo $_COOKIE["text"] ?>; font-family: <?php echo $_COOKIE["font"] ?>;">
 
+<?php
+require_once('user.php');
 
+?>
 
 
 <h1>Znowu formularz</h1>
