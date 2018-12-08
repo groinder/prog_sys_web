@@ -33,9 +33,6 @@
     ?><hr>
     Wiek:<br/>
     <input type="text" name="wiek"/>
-    <?php
-    echo $messeages['wiek'];
-    ?>
     <hr>
     Płeć:<br/>
     K <input type="radio" value='K' name="plec"/>
@@ -73,12 +70,12 @@
         <option>Muzyka</option>
     </select><br /><hr>
     Filmy które widziałem:<br />
-    <input type="checkbox" name="film_1"> Interstellar
-    <input type="checkbox" name="film_2"> Django
-    <input type="checkbox" name="film_3"> Venom
-    <input type="checkbox" name="film_4"> Titanic
-    <input type="checkbox" name="film_5"> Avatar
-    <input type="checkbox" name="film_6"> Gladiator
+    <input type="checkbox" name="film[super][]" value="Interstellar"> Interstellar
+    <input type="checkbox" name="film[meh][]" value="Django"> Django
+    <input type="checkbox" name="film[super][]" value="Venom"> Venom
+    <input type="checkbox" name="film[meh][]" value="Titanic"> Titanic
+    <input type="checkbox" name="film[meh][]" value="Avatar"> Avatar
+    <input type="checkbox" name="film[super][]" value=Gladiator"> Gladiator
     <input type="hidden" name="version" value="1.0" /><hr>
     <input type="submit" value="Wyślij">
 </form>
