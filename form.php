@@ -12,13 +12,33 @@
 
 </head>
 
-<body>
+<body style="background-color: <?php echo $_COOKIE["bckg"]?>; color: <?php echo $_COOKIE["text"] ?>; font-family: <?php echo $_COOKIE["font"] ?>;">
 
 
 
 
 <h1>Znowu formularz</h1>
-
+<form action="style.php" method="post">
+    <select name="bckg">
+        <option value="" selected disabled>Kolor tła</option>
+        <option value="black">Czarny</option>
+        <option value="red">Czerwony</option>
+        <option value="blue">Niebieski</option>
+    </select>
+    <select name="text">
+        <option value="" selected disabled>Kolor czcionki</option>
+        <option value="yellow">Żółty</option>
+        <option value="green">Zielony</option>
+        <option value="white">Biały</option>
+    </select>
+    <select name="font">
+        <option value="" selected disabled>Rodzaj czcionki</option>
+        <option value="Arial">Arial</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Times New Roman">Times New Roman</option>
+    </select>
+        <button type="submit" >Zatwierdź</button>
+</form>
 <form action="form_php.php" method="post">
     Imię:<br/>
     <input type="text" name="imie"/>
