@@ -61,6 +61,7 @@
         <option>Francja</option>
         <option>Inny</option>
     </select>
+
     <?php
     echo $messeages['kraj'];
     ?><hr>
