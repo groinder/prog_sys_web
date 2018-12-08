@@ -1,61 +1,93 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
+<?php
 
-    <title>Formularz</title>
-    <meta name="description" content="Formularz">
-    <meta name="keywords" content="formularz, osobowy">
-    <meta name="author" content="Maksymilian Galbierczyk">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+define('MIN_WIEK', 18);
 
 
-</head>
-
-<body>
-<h1>Znowu formularz</h1>
-
-<form action="wyniki.php" method="post">
-    Imię:<br/>
-    <input type="text" name="imie"/><hr>
-    Nazwisko<br/>
-    <input type="text" name="nazwisko"/><hr>
-    Wiek:<br/>
-    <input type="text" name="wiek"/><hr>
-    Płeć:<br/>
-    K <input type="radio" name="plec"/>
-    M <input type="radio" name="plec"/>
-    Jeszcze nie wiem <input type="radio" name="plec"/><hr>
-    Nr Telefonu:<br/>
-    <input type="text" name="telefon"/><hr>
-    E-mail<br />
-    <input type="text" name="email" /><hr>
-    Kraj pochodzenia: <br />
-    <select name="country[]">
-        <option>Polska</option>
-        <option>Niemcy</option>
-        <option>Francja</option>
-        <option>Inny</option>
-    </select><hr>
-    Zainteresowania:<br />
-    <select name="intrests[]" multiple="'multiple">
-        <option>Filmy</option>
-        <option>Książki</option>
-        <option>Sport</option>
-        <option>Muzyka</option>
-    </select><br /><hr>
-    Filmy które widziałem:<br />
-    <input type="checkbox" name="film_1"> Interstellar
-    <input type="checkbox" name="film_2"> Django
-    <input type="checkbox" name="film_3"> Venom
-    <input type="checkbox" name="film_4"> Titanic
-    <input type="checkbox" name="film_5"> Avatar
-    <input type="checkbox" name="film_6"> Gladiator
-    <input type="hidden" name="version" value="formularz 1.0" /><hr>
-    <input type="submit" value="Wyślij">
-</form>
+$messeages = array();
 
 
-</body>
+if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $messeages = validate();
+    if(is_array($messeages)){
+        require_once('form.php');
+    }
+    else{
+        require_once ('podsumowanie.php');
+    }
 
-</html>
+}
+else{
+    require_once('form.php');
+}
+
+
+
+    function validate()
+    {
+        $wal_imie = function($value, $fieldName) {
+
+            if (!preg_match("/[A-Z]{1}[a-z]+/", $value)) {
+                return "Źle podano ".$fieldName." ".$fieldName." powinno Zaczynać się z dużej litery i zawierać conajmniej dwa znaki<br />";
+
+
+            }
+        };
+
+        $wal_wiek = function($value, $fieldName){
+            if($value< MIN_WIEK){
+                return "Twój ".$fieldName." jest zbyt mały<br />";
+
+            }
+        };
+
+        $wal_email= function($value, $fieldName){
+
+            if (!preg_match("/[0-9a-z]+@[0-9a-z]+.pl/", $value)) {
+                return "Źle podano ".$fieldName.", prawidłowy format to nazwa@domena.pl<br />";
+            }
+        };
+
+        $wal_telefon= function($value, $fieldName){
+
+
+            if (!preg_match("/^[0-9]{3} [0-9]{3} [0-9]{3}/", $value)) {
+                return "Źle podano ".$fieldName." ,prawidłowy format to 000 000 000<br />";
+
+            }
+        };
+
+        $require = function($value, $fieldName){
+
+            if((empty($value))){
+                return "Musisz zaznaczyć ".$fieldName;
+            }
+
+        };
+
+
+
+        $form = array(
+            "imie" => $wal_imie,
+            "nazwisko" => $wal_imie,
+            "wiek" => $wal_wiek,
+            "email" => $wal_email,
+            "telefon" => $wal_telefon,
+            "plec" => $require,
+            "kraj" => $require,
+
+        );
+
+        $messeages = array();
+        $isValid = true;
+        foreach ($form as $fieldName => $walidator) {
+            $messeages[$fieldName] = $walidator($_POST[$fieldName], $fieldName);
+            if($messeages[$fieldName]){
+                $isValid = false;
+            }
+        }
+        return $isValid? true:$messeages;
+    }
+
+
+
+?>
