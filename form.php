@@ -105,8 +105,6 @@ require_once('user.php');
     <input type="hidden" name="version" value="1.0" /><hr>
     <input type="submit" value="Wyślij">
 </form>
-
-
 </body>
 
 </html>

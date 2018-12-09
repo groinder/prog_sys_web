@@ -12,4 +12,4 @@ if(isset($_SESSION['user'])): ?>
 <?php else: ?>
 <h3>Musisz się zalogować aby uzyskać dostęp do tej strony</h3>
 <a href="logowanie.php">Zaloguj się</a>
-<?php endif; die(); ?>
+<?php die(); endif;  ?>
