@@ -1,6 +1,6 @@
 <?php
-while(next($_COOKIE)){
-    echo key($_COOKIE)." ";
+foreach($_COOKIE as $key => $value){
+    echo $key." ".$value."<br />";
 }
 
 
