@@ -1,0 +1,4 @@
+c:\users\administrator\documents\visual studio 2010\Projects\Lista 1\Lista 1\bin\Lista 1.dll
+c:\users\administrator\documents\visual studio 2010\Projects\Lista 1\Lista 1\bin\Lista 1.pdb
+c:\users\administrator\documents\visual studio 2010\Projects\Lista 1\Lista 1\obj\Debug\Lista 1.dll
+c:\users\administrator\documents\visual studio 2010\Projects\Lista 1\Lista 1\obj\Debug\Lista 1.pdb
